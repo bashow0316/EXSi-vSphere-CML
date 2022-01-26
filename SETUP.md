@@ -11,26 +11,33 @@
 - https://customerconnect.vmware.com/jp/dashboard
 - https://customerconnect.vmware.com/jp/group/vmware/evalcenter?p=vsphere-eval-7
 
-
 ### Make USB drive (EXSi)
 
+``` sh
 diskutil list
 diskutil eraseDisk MS-DOS "ESXIBOOT" MBR disk2
 diskutil unmountDisk /dev/disk2
+```
 
+``` sh
 sudo fdisk -e /dev/disk2
 > f 1
 > write
 > y
 > exit
+```
 
+``` sh
 open iso
 cp -R /path/to/mounted/ISO/* /Volumes/ESXIBOOT
+```
 
+``` sh
 cd /Volumes/ESXIBOOT
 cat ISOLINUX.CFG
 cat ISOLINUX.CFG | grep APPEND
 sed -i "" 's/APPEND -c boot.cfg/APPEND -c boot.cfg -p 1/g' ISOLINUX.CFG
+```
 
 ### Install (EXSi)
 
@@ -38,8 +45,10 @@ Follow the procedure.
 
 ### Login (EXSi)
 
+``` sh
 user: root
 pass: "PASSWORD"
+```
 
 - https://customerconnect.vmware.com/jp/group/vmware/myeval
 
@@ -48,12 +57,10 @@ pass: "PASSWORD"
 version 2.2.3
 
 The Firefox browser recommends.
-(The chrome browser is not supported(?).(Bad Gateway: 400 Bad Request error))
 You need to complete my profile of cisco.com account.
+(The chrome browser is not supported(?).(Bad Gateway: 400 Bad Request error))
 
-You need to complete my profile.
-
-https://id.cisco.com/ui/v1.0/profile-ui
+- https://id.cisco.com/ui/v1.0/profile-ui
 
 ### Doc (CML)
 
@@ -70,15 +77,19 @@ Virtual Machines -> create / Register VM
 
 ### Login (CML2)
 
-#### CLI or 9090 (CML2)
+#### CLI or port:9090 (CML2)
 
+``` sh
 user: sysadmin
 pass: "PASSWORD"
+```
 
 #### web (CML2)
 
+``` sh
 user: admin
 pass: "PASSWORD"
+```
 
 ### License
 
