@@ -71,9 +71,14 @@ You need to complete my profile of cisco.com account.
 - cml2_controller.ova(2.2.3)
 - refplat-20210511-fcs.iso
 
-### Deploy cml ova
+### Deploy cml image
 
-Virtual Machines -> create / Register VM
+- Virtual Machines -> Create / Register VM
+  - Deployment options -> Remove the check from Power on automatically.
+
+- Virtual Machines -> Actions
+  - Edit settings
+    - Upgrade CPU number, Memory size, and Hard disk size.
 
 ### Login (CML2)
 
