@@ -1,6 +1,10 @@
-# SETUP MEMO (2022/01/24)
+# SETUP MEMO (2022/01/28)
+
+use MacOS X.
 
 ## EXSi
+
+VMware vSphere Hypervisor 7.0U3c
 
 ### Doc (EXSi)
 
@@ -28,8 +32,9 @@ sudo fdisk -e /dev/disk2
 ```
 
 ``` sh
-open iso
-cp -R /path/to/mounted/ISO/* /Volumes/ESXIBOOT
+sudo rm -rf /Volumes/ESXIBOOT
+hdiutil attach VMware-VMvisor-Installer-XXXXX.x86_64.iso
+cp -R /Volumes/ESXI-XXXXX/* /Volumes/ESXIBOOT
 ```
 
 ``` sh
